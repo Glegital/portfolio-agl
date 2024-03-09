@@ -59,10 +59,13 @@ header {
     text-decoration: none;
     font-weight: 500;
     color: #252525;
+    transition: all 200ms;
 }
 
 .nav_bar .links li a:hover {
-    color: #8401ff;
+    color: #00b09b;
+    text-decoration: underline;
+    text-underline-offset: 5px;
 }
 
 
@@ -74,7 +77,7 @@ header {
 }
 
 .action_btn {
-    background-color: rgb(68, 108, 176);
+    background-image: linear-gradient(to right, #00b09b, #96c93d);    
     color: rgb(255, 255, 255);
     padding: 0.5rem 1rem;
     border: none;
@@ -108,11 +111,12 @@ header {
     top: 110px;
     height: 0px;
     width: 300px;
-    background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(20px);
+    background: rgb(255, 255, 255);
+    backdrop-filter: blur(0px);
     border-radius: 10px;
     overflow: hidden;
-    transition: height 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: height 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    box-shadow: 2px 2px 2px #262626;
 }
 
 .dropdown_menu.open {
@@ -181,10 +185,10 @@ section#welcome {
 
 #motion h2 {
     font-size: 3em;
-    font-style: oblique;
     text-align: center;
-    font-weight: 700;
+    font-weight: 800;
     line-height: 60px;
+    letter-spacing: 3px;
     color: #fff;
     background-size: 150%;
 }
@@ -272,6 +276,7 @@ section#welcome {
     border: 1px solid #003D72;
     border-right: none;
     box-shadow: 5px 0px #252525;
+    background-color: #fff;
     transition: all 300ms cubic-bezier(0.215, 0.610, 0.355, 1);
 }
 
