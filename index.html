@@ -19,11 +19,11 @@
     <header>
         <nav class="nav_bar">
             <div class="logo">
-                <a href="#"><img src="img/AGL ICON_V3.png"></a>
+                <a href="#"><img src="img/AGL ICON_V4.png"></a>
             </div>
             <ul class="links">
                 <li><a href="#motion">Motion</a></li>
-                <li><a href="#">Brand ID</a></li>
+                <li><a href="#brand">Brand ID</a></li>
                 <li><a href="#">UI/UX</a></li>
                 <li><a href="#">Art</a></li>
             </ul>
@@ -35,7 +35,7 @@
         </nav>
         <div class="dropdown_menu open">
             <li><a href="#motion">Motion</a></li>
-            <li><a href="#">Brand ID</a></li>
+            <li><a href="#brand">Brand ID</a></li>
             <li><a href="#">UI/UX</a></li>
             <li><a href="#">Art</a></li>
             <li> <a href="#" class="action_btn">Contact</a></li>
@@ -45,15 +45,15 @@
 
     <main>
         <section id="welcome">
-            <!--
+        <!--
             <h1>
                 Bienvenida
             </h1>
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, maiores.
             </p>
-           --> 
-           <img src="img/3d test intro [Recuperado]-02.png" alt="" srcset="">
+        --> 
+        <img src="img/Full.gif" alt="" srcset="">
         </section>
     </main>
 
@@ -154,8 +154,56 @@
             <img class="active" src="img/gif/parallax.gif">
 
         </div>
-
+        
     </section>
+
+    <!--Brand designs   -->
+
+    <div id="brand">
+        <h2>
+            Brand Identity
+        </h2>
+        <br>
+        <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.<br><br> Id architecto tenetur, earum soluta fugit tempora.
+        </p>
+    </div>
+
+        <section id="brand-section">
+
+            <div class="brand-item">
+                <img src="/img/brand-land/logo-comp-wb.png"/>
+            </div>
+
+            <div class="brand-item">
+                <img src="/img/brand-land/greenwave-bag.png"/>
+            </div>
+
+            <div class="brand-item">
+                <img src="/img/brand-land/portada-egeria.jpg"/>
+            </div>
+
+            <div class="brand-item">
+                <img src="/img/brand-land/indice-egeria.jpg"/>
+            </div>
+
+            <div class="brand-item">
+                <img src="/img/brand-land/steeltrap.jpg"/>
+            </div>
+
+            <div class="brand-item">
+                <img src="/img/brand-land/techvibe.png"/>
+            </div>
+
+            <div class="brand-item">
+                <img src="/img/brand-land/Prisma-04.jpg"/>
+            </div>
+
+            <div class="brand-item">
+                <img src="/img/brand-land/luminix-copist.png"/>
+            </div>
+        </section>
+
 
     
     <script>
@@ -177,6 +225,16 @@ document.addEventListener("DOMContentLoaded", function() {
             toggleBtnIcon.classList = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
         }
     });
+
+    window.addEventListener( 'scroll', function() {
+  // if scroll down after 45px (position Y)
+if (window.scrollY > 45) {
+    document.querySelector('nav').style.position = 'fixed'
+    document.querySelector('nav').style.top = '0'
+} else {
+    document.querySelector('nav').style.position='none'
+}
+});
     </script>
 
 </body>
