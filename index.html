@@ -14,10 +14,10 @@
     
 </head>
 
-<body>
+<body> 
 
     <header>
-        <nav class="nav_bar">
+        <nav class="nav_bar" id="top">
             <div class="logo">
                 <a href="#"><img src="img/AGL ICON_V4.png"></a>
             </div>
@@ -53,7 +53,11 @@
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, maiores.
             </p>
         --> 
-        <img src="img/Full.gif" alt="" srcset="">
+        <video autoplay loop muted id="intro-video">
+            <source src="/img/Videos/Intro Web.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+        <!-- <img src="img/Full.gif" alt="" srcset=""> -->
         </section>
     </main>
 
@@ -98,6 +102,7 @@
         <div class="motion-item">
             <h3>
                 2D Logo Animation
+                <span><i class="fa-solid fa-play"></i></span>
             </h3>            
             <img class="static" src="img/gif/compilation-logos.jpg">
             <img class="active" src="img/gif/compilation-logos.gif">
@@ -107,6 +112,7 @@
         <div class="motion-item">
             <h3>
                 Futuristic HUD 3D Space
+                <span><i class="fa-solid fa-play"></i></span>
             </h3>
             <img class="static" src="img/gif/hud.jpg">
             <img class="active" src="img/gif/hud.gif">
@@ -115,6 +121,7 @@
         <div class="motion-item">
             <h3>
                 Main Logo Animation
+                <span><i class="fa-solid fa-play"></i></span>
             </h3>
             <img class="static" src="img/gif/logo.jpg">
             <img class="active" src="img/gif/logo.gif">
@@ -123,6 +130,7 @@
         <div class="motion-item">
             <h3>
                 Lettering Motion Projects
+                <span><i class="fa-solid fa-play"></i></span>
             </h3>
             <img class="static" src="img/gif/letras.jpg">
             <img class="active" src="img/gif/letras.gif">
@@ -132,6 +140,7 @@
         <div class="motion-item">
             <h3>
                 Gameboy, Tanjiro & Hawk
+                <span><i class="fa-solid fa-play"></i></span>
             </h3>
             <img class="static" src="img/gif/other-stuff.jpg">
             <img class="active" src="img/gif/other-stuff.gif">
@@ -140,6 +149,7 @@
         <div class="motion-item">
             <h3>
                 Social Media AD
+                <span><i class="fa-solid fa-play"></i></span>
             </h3>
             <img class="static" src="img/gif/pointnic.jpg">
             <img class="active" src="img/gif/pointnic.gif">
@@ -149,6 +159,7 @@
         <div class="motion-item">
             <h3>
                 Parallax Effect
+                <span><i class="fa-solid fa-play"></i></span>
             </h3>
             <img class="static" src="img/gif/parallax.jpg">
             <img class="active" src="img/gif/parallax.gif">
@@ -170,40 +181,29 @@
     </div>
 
         <section id="brand-section">
+            <article class="brand-item">
+                <h3>Egeria Magazine Editorial Design</h3>
+                <div class="brand-img">
+                    <img src="/img/egeria/Portada Faro.jpg">
+                    <img src="/img/egeria/Portada Santorini.jpg">
+                    <img src="/img/egeria/Indice.jpg">
+                    <img src="/img/egeria/Interior Catedral.jpg">
+                    <img src="/img/egeria/Interior Sant Antoni.jpg">
+                    <div class="brand-paragraph">
+                        <h4>Egeria Editorial Design</h4>
+                        <br>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus molestias, 
+                            quam maxime non modi minima nisi blanditiis iure fugiat rem?</p>
+                            <br>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus molestias, 
+                            quam maxime non modi minima nisi blanditiis iure fugiat rem?</p>
+                    </div>
 
-            <div class="brand-item">
-                <img src="/img/brand-land/logo-comp-wb.png"/>
-            </div>
-
-            <div class="brand-item">
-                <img src="/img/brand-land/greenwave-bag.png"/>
-            </div>
-
-            <div class="brand-item">
-                <img src="/img/brand-land/portada-egeria.jpg"/>
-            </div>
-
-            <div class="brand-item">
-                <img src="/img/brand-land/indice-egeria.jpg"/>
-            </div>
-
-            <div class="brand-item">
-                <img src="/img/brand-land/steeltrap.jpg"/>
-            </div>
-
-            <div class="brand-item">
-                <img src="/img/brand-land/techvibe.png"/>
-            </div>
-
-            <div class="brand-item">
-                <img src="/img/brand-land/Prisma-04.jpg"/>
-            </div>
-
-            <div class="brand-item">
-                <img src="/img/brand-land/luminix-copist.png"/>
-            </div>
+                </div>
+            </article>
         </section>
 
+        <a href="#top"><div id="flotante"><i class="fa-solid fa-arrow-up"><br><span>INICIO</span></i></div></a>
 
     
     <script>
@@ -226,15 +226,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    window.addEventListener( 'scroll', function() {
-  // if scroll down after 45px (position Y)
-if (window.scrollY > 45) {
-    document.querySelector('nav').style.position = 'fixed'
-    document.querySelector('nav').style.top = '0'
-} else {
-    document.querySelector('nav').style.position='none'
-}
-});
     </script>
 
 </body>
