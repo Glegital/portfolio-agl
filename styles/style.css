@@ -7,6 +7,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Montserrat", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
 }
 
 html {
@@ -184,7 +185,7 @@ video {
 #first-about{
     margin: 0 auto;
     margin-top: 80px;
-    margin-bottom: 80px;
+    margin-bottom: 180px;
     height: 350px;
     display: flex;
     justify-content: center;
@@ -194,11 +195,62 @@ video {
     max-width: 1250px;
     background-image: linear-gradient(to right, #72d19b, #a45dd7);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
+    animation: reveal-scale-opacity linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 40%;
 }
+
+@keyframes reveal-right {
+    from{
+        opacity: 0;
+        translate: 50% 0;
+    }
+
+    to {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+@keyframes reveal-left {
+    from{
+        opacity: 0;
+        translate: -50% 0;
+    }
+
+    to {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+@keyframes reveal-opacity{
+    from{
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes reveal-scale-opacity{
+    0%{
+        scale: 0.9;
+        opacity: 0;
+    }
+
+
+    100% {
+        scale: 1;
+        opacity: 1;
+    }
+}
+
 
 #profile-pic{
     width: 30%;
+    min-height: 400px;
     margin-bottom: 30px;
     margin-top: -30px;
     margin-right: 20px;
@@ -208,6 +260,9 @@ video {
     background-size: cover;
     background-position: center;
     box-shadow: rgba(0, 0, 0, 0.64) 0px 3px 8px;
+    animation: reveal-left linear both;
+    animation-timeline: view();
+    animation-range: entry 50% cover 50%;
 }
 
 .introduction{
@@ -217,6 +272,9 @@ video {
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.95);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    animation: reveal-scale-opacity linear both;
+    animation-timeline: view();
+    animation-range: entry 50% cover 50%;
 }
 
 .introduction > h2{
@@ -253,7 +311,7 @@ video {
     #first-about{
         margin: 0 auto;
         margin-top: 80px;
-        margin-bottom: 80px;
+        margin-bottom: 180px;
         display: flex;
         height: fit-content;
         justify-content: center;
@@ -261,7 +319,6 @@ video {
         max-width: 1250px;
         background-image: linear-gradient(to right, #72d19b, #a45dd7);
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    
     }
     
     #profile-pic{
@@ -353,12 +410,29 @@ video {
     justify-content: center;
     grid-template-columns: auto auto;
     gap: 1.5rem;
+
 }
 
-.motion-item>img {
+
+.motion-item > img {
     margin-top: 10px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     width: 100%;
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 45%;
+}
+
+@keyframes reveal{
+    from{
+        opacity: 0;
+        translate: 0 50px;
+    }
+
+    to{
+        opacity: 1;
+        translate: 0 0;
+    }
 }
 
 .marginado {
@@ -562,12 +636,13 @@ video {
 }
 
 #brand-section {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     align-content: center;
 }
 
 .brand-item {
+    padding: 20px 20px 40px 20px;
     padding-top: 20px;
     padding-bottom: 40px;
 }
@@ -583,6 +658,9 @@ video {
     box-shadow: 5px 5px 0px #ffca56;
     background-color: #fff;
     transition: all 300ms cubic-bezier(0.215, 0.610, 0.355, 1);
+    animation: reveal-left linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 40%;
 }
 
 .brand-img {
@@ -595,6 +673,9 @@ video {
     margin: 0 auto;
     width: 95%;
     box-shadow: 0px 0px 10px #c7c7c7;
+    animation: reveal-scale-opacity linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 40%;
 }
 
 .brand-comp {
@@ -607,12 +688,18 @@ video {
     margin: 0 auto;
     width: 95%;
     box-shadow: 0px 0px 10px #c7c7c7;
+    animation: reveal-scale-opacity linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 40%;
 }
 
 .brand-img .brand-paragraph {
     margin: 0 auto;
     width: 95%;
     box-shadow: 0px 0px 10px #c7c7c7;
+    animation: reveal-scale-opacity linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 40%;
 }
 
 .brand-paragraph {
@@ -628,8 +715,8 @@ video {
 /* UI/UX Starts here */
 
 #ui-ux {
-    display: flex;
     padding: 50px;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -642,15 +729,14 @@ video {
     font-size: 3em;
     text-align: center;
     font-weight: 800;
-    line-height: 60px;
     letter-spacing: 3px;
     color: #fff;
-    background-size: 150%;
+    height: 100px;
 }
 
 #ui-ux p {
+    padding-top: 20px;
     font-size: 1.5em;
-    max-width: 50%;
     color: #fff;
 }
 
@@ -666,10 +752,10 @@ video {
     grid-template-columns: auto;
 }
 
-.ui-ux-item>img {
+.ui-ux-item > img {
     margin: 0 auto;
     margin-bottom: 20px;
-    width: 80%;
+    width: 100%;
     max-width: 850px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
@@ -763,7 +849,6 @@ video {
 #art-section {
     display: grid;
     margin: 0 auto;
-    padding-bottom: 20px;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 10% 20% 20% 20% 20%;
     grid-template-areas:
@@ -775,7 +860,9 @@ video {
     ;
     gap: 1rem;
     width: 90%;
+    max-width: 1350px;
     height: 1700px;
+    margin-bottom: 200px;
 }
 
 #art-section .header {
@@ -785,6 +872,9 @@ video {
     background-size: contain;
     background-position: center;
     background-image: url(/img/art/metaballs.jpg);
+    animation: reveal-scale-opacity linear both;
+    animation-timeline: view();
+    animation-range: entry 50% cover 50%;
 }
 
 #art-section .principal {
@@ -794,6 +884,9 @@ video {
     background-size: cover;
     background-position: center;
     background-image: url(/img/art/mariposa_remaster.jpg);
+    animation: reveal-scale-opacity linear both;
+    animation-timeline: view();
+    animation-range: entry 50% cover 50%;
 }
 
 #art-section .side {
@@ -803,6 +896,9 @@ video {
     background-size: cover;
     background-position: center;
     background-image: url(/img/art/rezilla.jpg);
+    animation: reveal-scale-opacity linear both;
+    animation-timeline: view();
+    animation-range: entry 50% cover 50%;
 }
 
 #art-section .alone1 {
@@ -812,6 +908,9 @@ video {
     background-size: cover;
     background-position: center;
     background-image: url(/img/art/egypt_recolor.jpg);
+    animation: reveal-scale-opacity linear both;
+    animation-timeline: view();
+    animation-range: entry 50% cover 50%;
 }
 
 #art-section .alone2 {
@@ -821,6 +920,9 @@ video {
     background-size: cover;
     background-position: center;
     background-image: url(/img/art/polilla.jpg);
+    animation: reveal-scale-opacity linear both;
+    animation-timeline: view();
+    animation-range: entry 50% cover 50%;
 }
 
 #art-section .alone3 {
@@ -830,6 +932,9 @@ video {
     background-size: cover;
     background-position: center;
     background-image: url(/img/art/xenomorph.jpg);
+    animation: reveal-scale-opacity linear both;
+    animation-timeline: view();
+    animation-range: entry 50% cover 50%;
 }
 
 #art-section .alone4 {
@@ -839,6 +944,9 @@ video {
     background-size: cover;
     background-position: center;
     background-image: url(/img/art/tanjiro.jpg);
+    animation: reveal-scale-opacity linear both;
+    animation-timeline: view();
+    animation-range: entry 50% cover 50%;
 }
 
 #art-section .alone5 {
@@ -848,6 +956,9 @@ video {
     background-size: cover;
     background-position: center;
     background-image: url(/img/art/black-hole.jpg);
+    animation: reveal-scale-opacity linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
 }
 
 #art-section .alone6 {
@@ -857,6 +968,9 @@ video {
     background-size: cover;
     background-position: center;
     background-image: url(/img/art/contrast.jpg);
+    animation: reveal-scale-opacity linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
 }
 
 @media (width < 1050px) {
@@ -1067,5 +1181,6 @@ video {
 
     .brand-img {
         grid-template-columns: auto;
+        width: 100%;
     }
 }
