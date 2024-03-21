@@ -28,9 +28,6 @@ a {
 
 /* HEADER */
 
-header {
-    position: relative;
-}
 
 .logo img {
     width: 160px;
@@ -106,11 +103,8 @@ header {
     padding: 5px 10px;
     border-radius: 10px;
     top: 20px;
-    /* Ajusta esto según sea necesario */
     right: 30px;
-    /* Ajusta esto según sea necesario */
     z-index: 9999;
-    /* Asegura que esté por encima de otros elementos */
 }
 
 .fa-xmark {
@@ -134,7 +128,7 @@ header {
     overflow: hidden;
     transition: height 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
     box-shadow: 2px 2px 2px #262626;
-    z-index: 1;
+    z-index: 9999;
 }
 
 .dropdown_menu.open {
@@ -167,24 +161,288 @@ header {
     color: #fff;
 }
 
+/* title */
+
+header{
+    text-align: center;
+    color: #252525;
+}
+
+header h1 {
+display: flex;
+justify-content: center;
+text-align: center;
+font-size: 2rem;
+font-weight: 900;
+color: #ffffff;
+margin-bottom: 20px;
+padding: 20px;
+background-color: tomato;
+}
+
+header h1 span{
+    margin-right: 7px;
+    color: #fff;
+}
+
+header #fast-view {
+    font-size: 1.5rem;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+header #do-scroll {
+    font-size: 1.5rem;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+header #do-scroll span{
+    margin-left: 10px;
+    margin-right: 10px;
+    color: tomato;
+}
+
+header .fa-arrow-turn-up{
+    margin-left: 15px;
+    font-size: 1.6rem;
+    color: tomato;
+}
+
+@media (width < 576px) {
+    header #fast-view{
+        font-size: 1rem;
+    }
+
+    header #do-scroll {
+        font-size: 1rem;
+    }
+    
+    header #do-scroll span{
+        margin-left: 10px;
+        margin-right: 10px;
+        color: tomato;
+    }
+    
+    header .fa-arrow-turn-up{
+        margin-left: 15px;
+        font-size: 1.6rem;
+        color: tomato;
+    }
+    
+}
+
+.scroll-effect {
+    display: inline-block;
+    animation: scrollAnimation 2s linear infinite;
+}
+
+@keyframes scrollAnimation {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    51% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+.scroll-trigger {
+    display: flex;
+    /* Alinear los íconos en línea */
+    flex-direction: column;
+    align-items: center;
+}
+
+.scroll-trigger i {
+    color: tomato;
+    font-size: 3rem;
+    font-weight: 900;
+    animation: bounce 1.5s infinite;
+    margin-bottom: -30px;
+    /* Espacio entre las flechas */
+
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+}
+/* SLIDER TEST CSS */
+
+.slider {
+    --slider-width: 700px;
+    --slider-height: calc(var(--slider-width) * 9 / 16); /* Calculamos la altura en base al ancho para mantener la proporción 16:9 */
+    --slider-bullets-spacing-y: 16px;
+    --slider-bullets-height: 12px;
+    --slider-shadow: 0px 10px 26px 3px rgb(0 0 0 / 10%);
+    --slider-border-width: 8px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    gap: 8px;
+    align-items: flex-end;
+    justify-content: center;
+    width: var(--slider-width);
+    height: calc(var(--slider-bullets-spacing-y) + var(--slider-bullets-height) + var(--slider-height) + (var(--slider-border-width) * 2));
+}
+
+.slider__content {
+    position: absolute;
+    bottom: calc(var(--slider-bullets-spacing-y) + var(--slider-bullets-height));
+    left: 50%;
+    z-index: 5;
+    width: var(--slider-width);
+    height: var(--slider-height);
+    overflow: hidden;
+    border: var(--slider-border-width) solid #2f2f2f;
+    border-radius: 16px;
+    translate: -50% 0;
+
+    > img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        transition: translate 0.5s ease-in-out;
+        object-fit:cover;
+    }
+}
+
+.slider__control {
+    &::after {
+        position: absolute;
+        bottom: calc(50% + (var(--slider-bullets-spacing-y) + var(--slider-bullets-height)) / 2);
+        z-index: 10;
+        width: 32px;
+        height: 64px;
+        cursor: pointer;
+        content: "";
+        background: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 6l-6 6l6 6"%2F%3E%3C%2Fsvg%3E') white;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 24px 24px;
+        transition: width 0.2s cubic-bezier(0.11, 1.03, 0.82, 1.33);
+        translate: 0 50%;
+        box-shadow: 0px 0px 5px #e2e2e2;
+    }
+
+    &:hover::after {
+        width: 48px;
+    }
+
+    > input {
+        display: block;
+        height: var(--slider-bullets-height);
+        aspect-ratio: 1/1;
+        margin: 0;
+        appearance: none;
+        cursor: pointer;
+        background-color: #8d8d8d;
+        border-radius: 20px;
+        box-shadow: var(--slider-shadow);
+        opacity: 0.5;
+        transition: all 0.2s cubic-bezier(0.11, 1.03, 0.82, 1.33);
+        scale: 0.75;
+
+        &:hover {
+            scale: 1;
+        }
+
+        &:checked {
+            opacity: 1;
+            scale: 1;
+        }
+    }
+}
+
+.slider__item {
+
+    /* All slides except current */
+    &:not(:has(input:checked)) {
+        .slider__content>img {
+            translate: -100% 0;
+        }
+
+        .slider__control::after {
+            right: 100%;
+        }
+    }
+
+    /* Current slide */
+    &:has(input:checked) {
+        z-index: 1;
+
+        .slider__content > img {
+            translate: 0 0;
+        }
+
+        .slider__control::after {
+            display: none;
+        }
+    }
+
+    /* Slides after current slide */
+    &:has(input:checked)~& {
+        z-index: 5;
+
+        .slider__content>img {
+            translate: 100% 0;
+        }
+
+        & .slider__control::after {
+            right: auto;
+            left: 100%;
+            rotate: 180deg;
+        }
+    }
+
+    /* Direct next slide */
+    &:has(input:checked)+& {
+        z-index: 7;
+        display: block;
+    }
+}
+
 /* Welcome to AGL Design*/
+
 section #welcome {
     margin: 0 auto;
 }
 
-video {
-    display: block;
+#first-about {
     margin: 0 auto;
-    margin-bottom: 100px;
-    align-content: center;
-    width: 90%;
-    max-width: 1080px;
-    z-index: 0;
-}
-
-#first-about{
-    margin: 0 auto;
-    margin-top: 80px;
+    margin-top: 180px;
     margin-bottom: 180px;
     height: 350px;
     display: flex;
@@ -193,15 +451,14 @@ video {
     background-position: center;
     background-size: cover;
     max-width: 1250px;
-    background-image: linear-gradient(to right, #72d19b, #a45dd7);
+    background-color: tomato;
+    /*background-image: linear-gradient(to right, #72d19b, #a45dd7);*/
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    animation: reveal-scale-opacity linear both;
-    animation-timeline: view();
-    animation-range: entry 20% cover 40%;
+
 }
 
 @keyframes reveal-right {
-    from{
+    from {
         opacity: 0;
         translate: 50% 0;
     }
@@ -213,7 +470,7 @@ video {
 }
 
 @keyframes reveal-left {
-    from{
+    from {
         opacity: 0;
         translate: -50% 0;
     }
@@ -224,8 +481,8 @@ video {
     }
 }
 
-@keyframes reveal-opacity{
-    from{
+@keyframes reveal-opacity {
+    from {
         opacity: 0;
     }
 
@@ -234,8 +491,8 @@ video {
     }
 }
 
-@keyframes reveal-scale-opacity{
-    0%{
+@keyframes reveal-scale-opacity {
+    0% {
         scale: 0.9;
         opacity: 0;
     }
@@ -248,7 +505,7 @@ video {
 }
 
 
-#profile-pic{
+#profile-pic {
     width: 30%;
     min-height: 400px;
     margin-bottom: 30px;
@@ -256,16 +513,16 @@ video {
     margin-right: 20px;
     position: relative;
     border: 2px solid #252525;
-    background-image: url(/img/micara2023.jpg);
+    background-image: url(/img/perfil.jpg);
     background-size: cover;
-    background-position: center;
+    background-position: top;
     box-shadow: rgba(0, 0, 0, 0.64) 0px 3px 8px;
     animation: reveal-left linear both;
     animation-timeline: view();
     animation-range: entry 50% cover 50%;
 }
 
-.introduction{
+.introduction {
     margin-top: 30px;
     width: 40%;
     height: fit-content;
@@ -277,13 +534,13 @@ video {
     animation-range: entry 50% cover 50%;
 }
 
-.introduction > h2{
+.introduction>h2 {
     font-size: 2rem;
     font-weight: 900;
     color: #282828;
 }
 
-.introduction .paragraph-one{
+.introduction .paragraph-one {
     font-size: 1.2rem;
     font-weight: 900;
     color: #505050;
@@ -291,26 +548,26 @@ video {
     letter-spacing: 0.5px;
 }
 
-.introduction .paragraph-two{
+.introduction .paragraph-two {
     font-size: 1rem;
     font-weight: 400;
     color: #505050;
 }
 
-.introduction .paragraph-one span{
+.introduction .paragraph-one span {
     color: #da2648;
 }
 
-.introduction .paragraph-two span{
+.introduction .paragraph-two span {
     color: #da2648;
 }
 
 /*Responsive presentación*/
 
-@media (width < 820px){
-    #first-about{
+@media (width < 820px) {
+    #first-about {
         margin: 0 auto;
-        margin-top: 80px;
+        margin-top: 180px;
         margin-bottom: 180px;
         display: flex;
         height: fit-content;
@@ -320,20 +577,20 @@ video {
         background-image: linear-gradient(to right, #72d19b, #a45dd7);
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
-    
-    #profile-pic{
+
+    #profile-pic {
         margin: 0 auto;
         width: 60%;
-        height: 400px;
+        height: 300px;
         margin-top: -60px;
         border: 2px solid #252525;
-        background-image: url(/img/micara2023.jpg);
+        background-image: url(/img/perfil.jpg);
         background-size: cover;
-        background-position: center;
+        background-position: top;
         box-shadow: rgba(0, 0, 0, 0.64) 0px 3px 8px;
     }
-    
-    .introduction{
+
+    .introduction {
         margin: 0 auto;
         margin-top: 30px;
         margin-bottom: -40px;
@@ -343,22 +600,22 @@ video {
         background-color: rgba(255, 255, 255, 0.95);
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
-    
-    .introduction > h2{
+
+    .introduction>h2 {
         font-size: 2rem;
         font-weight: 900;
         color: #282828;
     }
-    
-    .introduction .paragraph-one{
+
+    .introduction .paragraph-one {
         font-size: 1.2rem;
         font-weight: 900;
         color: #505050;
         line-height: 25px;
         letter-spacing: 0.5px;
     }
-    
-    .introduction .paragraph-two{
+
+    .introduction .paragraph-two {
         font-size: 1rem;
         font-weight: 400;
         color: #505050;
@@ -414,7 +671,7 @@ video {
 }
 
 
-.motion-item > img {
+.motion-item>img {
     margin-top: 10px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     width: 100%;
@@ -423,13 +680,13 @@ video {
     animation-range: entry 10% cover 45%;
 }
 
-@keyframes reveal{
-    from{
+@keyframes reveal {
+    from {
         opacity: 0;
         translate: 0 50px;
     }
 
-    to{
+    to {
         opacity: 1;
         translate: 0 0;
     }
@@ -495,7 +752,7 @@ video {
 }
 
 .motion-item>h3>span {
-    font-size: 25px;
+    font-size: 21px;
     color: #363636;
     float: right;
 }
@@ -637,6 +894,7 @@ video {
 
 #brand-section {
     width: 100%;
+    max-width: 1350px;
     margin: 0 auto;
     align-content: center;
 }
@@ -658,7 +916,7 @@ video {
     box-shadow: 5px 5px 0px #ffca56;
     background-color: #fff;
     transition: all 300ms cubic-bezier(0.215, 0.610, 0.355, 1);
-    animation: reveal-left linear both;
+    animation: reveal-opacity linear both;
     animation-timeline: view();
     animation-range: entry 20% cover 40%;
 }
@@ -752,7 +1010,7 @@ video {
     grid-template-columns: auto;
 }
 
-.ui-ux-item > img {
+.ui-ux-item>img {
     margin: 0 auto;
     margin-bottom: 20px;
     width: 100%;
@@ -850,7 +1108,7 @@ video {
     display: grid;
     margin: 0 auto;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 10% 20% 20% 20% 20%;
+    grid-template-rows: 100px 300px 300px 450px 450px;
     grid-template-areas:
         "header header header"
         "principal principal side"
@@ -861,8 +1119,7 @@ video {
     gap: 1rem;
     width: 90%;
     max-width: 1350px;
-    height: 1700px;
-    margin-bottom: 200px;
+    margin-bottom: 100px;
 }
 
 #art-section .header {
@@ -886,7 +1143,7 @@ video {
     background-image: url(/img/art/mariposa_remaster.jpg);
     animation: reveal-scale-opacity linear both;
     animation-timeline: view();
-    animation-range: entry 50% cover 50%;
+    animation-range: entry 20% cover 50%;
 }
 
 #art-section .side {
@@ -898,7 +1155,7 @@ video {
     background-image: url(/img/art/rezilla.jpg);
     animation: reveal-scale-opacity linear both;
     animation-timeline: view();
-    animation-range: entry 50% cover 50%;
+    animation-range: entry 20% cover 50%;
 }
 
 #art-section .alone1 {
@@ -910,7 +1167,7 @@ video {
     background-image: url(/img/art/egypt_recolor.jpg);
     animation: reveal-scale-opacity linear both;
     animation-timeline: view();
-    animation-range: entry 50% cover 50%;
+    animation-range: entry 20% cover 50%;
 }
 
 #art-section .alone2 {
@@ -922,7 +1179,7 @@ video {
     background-image: url(/img/art/polilla.jpg);
     animation: reveal-scale-opacity linear both;
     animation-timeline: view();
-    animation-range: entry 50% cover 50%;
+    animation-range: entry 20% cover 50%;
 }
 
 #art-section .alone3 {
@@ -934,7 +1191,7 @@ video {
     background-image: url(/img/art/xenomorph.jpg);
     animation: reveal-scale-opacity linear both;
     animation-timeline: view();
-    animation-range: entry 50% cover 50%;
+    animation-range: entry 20% cover 50%;
 }
 
 #art-section .alone4 {
@@ -946,7 +1203,7 @@ video {
     background-image: url(/img/art/tanjiro.jpg);
     animation: reveal-scale-opacity linear both;
     animation-timeline: view();
-    animation-range: entry 50% cover 50%;
+    animation-range: entry 20% cover 50%;
 }
 
 #art-section .alone5 {
@@ -958,7 +1215,7 @@ video {
     background-image: url(/img/art/black-hole.jpg);
     animation: reveal-scale-opacity linear both;
     animation-timeline: view();
-    animation-range: entry 0% cover 30%;
+    animation-range: entry 20% cover 50%;
 }
 
 #art-section .alone6 {
@@ -970,16 +1227,16 @@ video {
     background-image: url(/img/art/contrast.jpg);
     animation: reveal-scale-opacity linear both;
     animation-timeline: view();
-    animation-range: entry 0% cover 30%;
+    animation-range: entry 20% cover 50%;
 }
 
 @media (width < 1050px) {
     #art-section {
         display: grid;
         margin: 0 auto;
-        padding-bottom: 20px;
+        padding-bottom: 40px;
         grid-template-columns: 50% 50%;
-        grid-template-rows: 150px 300px 300px 300px 300px 300px 300px 300px;
+        grid-template-rows: 150px 350px 350px 350px 350px 350px 350px ;
         grid-template-areas:
             "header header"
             "principal principal"
@@ -991,7 +1248,6 @@ video {
         ;
         gap: 1rem;
         width: 90%;
-        height: 1700px;
     }
 }
 
@@ -1001,7 +1257,7 @@ video {
         margin: 0 auto;
         padding-bottom: 20px;
         grid-template-columns: 1fr;
-        grid-template-rows: 100px 400px 300px 300px 300px 300px 300px 300px;
+        grid-template-rows: 100px 550px 550px 550px 550px 550px 550px 550px;
         grid-template-areas:
             "header"
             "principal"
@@ -1014,13 +1270,111 @@ video {
             "alone6"
         ;
         gap: 1rem;
-        width: 90%;
-        height: 1700px;
+        width: 85vw;
     }
 }
 
 /* Ilustration CSS ENDS*/
 
+footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: fit-content;
+    background-color: tomato;
+}
+
+footer a{
+    text-decoration: none;
+    color: white;
+}
+
+footer .fa-brands{
+    padding: 10px;
+    color: #252525;
+    transition: color 300ms;
+}
+
+footer .redes{
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-size: 2rem;
+}
+
+footer .personal-data{
+    text-align: center;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+footer .personal-data a{
+    color: #252525;
+    transition: color 300ms;
+}
+
+footer .fa-brands:hover{
+    color: #fff;
+}
+
+footer .personal-data a:hover{
+    color: #fff;
+}
+
+@media (width < 576px){
+
+    footer{
+        display: grid;
+        grid-template-columns: 1fr;
+        height: fit-content;
+        background-color: tomato;
+    }
+    
+    footer a{
+        text-decoration: none;
+        color: white;
+    }
+    
+    
+    footer .personal-data{
+        margin: 0 auto;
+        text-align: center;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 20px;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+    
+    footer .personal-data a{
+        color: #252525;
+        transition: color 300ms;
+    }
+    
+    footer .fa-brands:hover{
+        color: #fff;
+    }
+    
+    footer .personal-data a:hover{
+        color: #fff;
+    }
+    
+
+}
 
 /*Boton back*/
 
@@ -1183,4 +1537,110 @@ video {
         grid-template-columns: auto;
         width: 100%;
     }
+}
+
+/*SLIDER RESPONSIVE*/
+
+@media (width < 840px) {
+    .slider {
+        --slider-width: 500px;
+    }
+}
+
+@media (width < 576px) {
+    .slider {
+        --slider-width: 95%;
+        --slider-height: 270px;
+        --slider-bullets-spacing-y: 16px;
+        --slider-bullets-height: 24px;
+        --slider-shadow: 0px 10px 26px 3px rgb(0 0 0 / 10%);
+        --slider-border-width: 4px;
+    }
+
+    .slider__control {
+        &::after {
+            position: none;
+            bottom: calc(50% + (var(--slider-bullets-spacing-y) + var(--slider-bullets-height)) / 2);
+            z-index: 10;
+            width: 0px;
+            height: 0px;
+            cursor: pointer;
+            background: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 6l-6 6l6 6"%2F%3E%3C%2Fsvg%3E') white;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 24px 24px;
+            transition: width 0.2s cubic-bezier(0.11, 1.03, 0.82, 1.33);
+            translate: 0 50%;
+            box-shadow: 0px 0px 5px #e2e2e2;
+        }
+    
+        &:hover::after {
+            width: 30px;
+        }
+    
+        > input {
+            display: block;
+            height: var(--slider-bullets-height);
+            aspect-ratio: 1/1;
+            margin: 0;
+            appearance: none;
+            cursor: pointer;
+            background-color: #8d8d8d;
+            border-radius: 20px;
+            box-shadow: var(--slider-shadow);
+            opacity: 0.5;
+            transition: all 0.2s cubic-bezier(0.11, 1.03, 0.82, 1.33);
+            scale: 0.75;
+    
+            &:hover {
+                scale: 1;
+            }
+    
+            &:checked {
+                opacity: 1;
+                scale: 1;
+            }
+        }
+    }
+
+    .slider__item {
+
+        /* All slides except current */
+        &:not(:has(input:checked)) {
+            .slider__content>img {
+                translate: -100% 0;
+            }
+    
+        }
+    
+        /* Current slide */
+        &:has(input:checked) {
+            z-index: 1;
+    
+            .slider__content>img {
+                translate: 0 0;
+            }
+    
+            
+        }
+    
+        /* Slides after current slide */
+        &:has(input:checked)~& {
+            z-index: 5;
+    
+            .slider__content>img {
+                translate: 100% 0;
+            }
+    
+            
+        }
+    
+        /* Direct next slide */
+        &:has(input:checked)+& {
+            z-index: 7;
+            display: block;
+        }
+    }
+    
+
 }
