@@ -26,6 +26,10 @@ a {
     text-decoration: none;
 }
 
+p{
+    margin-bottom: 0;
+}
+
 /* HEADER */
 
 
@@ -136,7 +140,7 @@ a {
 }
 
 .dropdown_menu li {
-    padding: 0.5rem;
+    padding: 0.3rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -300,139 +304,6 @@ header .fa-arrow-turn-up{
 }
 /* SLIDER TEST CSS */
 
-.slider {
-    --slider-width: 700px;
-    --slider-height: calc(var(--slider-width) * 9 / 16); /* Calculamos la altura en base al ancho para mantener la proporción 16:9 */
-    --slider-bullets-spacing-y: 16px;
-    --slider-bullets-height: 12px;
-    --slider-shadow: 0px 10px 26px 3px rgb(0 0 0 / 10%);
-    --slider-border-width: 8px;
-    margin: 0 auto;
-    position: relative;
-    display: flex;
-    gap: 8px;
-    align-items: flex-end;
-    justify-content: center;
-    width: var(--slider-width);
-    height: calc(var(--slider-bullets-spacing-y) + var(--slider-bullets-height) + var(--slider-height) + (var(--slider-border-width) * 2));
-}
-
-.slider__content {
-    position: absolute;
-    bottom: calc(var(--slider-bullets-spacing-y) + var(--slider-bullets-height));
-    left: 50%;
-    z-index: 5;
-    width: var(--slider-width);
-    height: var(--slider-height);
-    overflow: hidden;
-    border: var(--slider-border-width) solid #2f2f2f;
-    border-radius: 16px;
-    translate: -50% 0;
-
-    > img {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        transition: translate 0.5s ease-in-out;
-        object-fit:cover;
-    }
-}
-
-.slider__control {
-    &::after {
-        position: absolute;
-        bottom: calc(50% + (var(--slider-bullets-spacing-y) + var(--slider-bullets-height)) / 2);
-        z-index: 10;
-        width: 32px;
-        height: 64px;
-        cursor: pointer;
-        content: "";
-        background: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 6l-6 6l6 6"%2F%3E%3C%2Fsvg%3E') white;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 24px 24px;
-        transition: width 0.2s cubic-bezier(0.11, 1.03, 0.82, 1.33);
-        translate: 0 50%;
-        box-shadow: 0px 0px 5px #e2e2e2;
-    }
-
-    &:hover::after {
-        width: 48px;
-    }
-
-    > input {
-        display: block;
-        height: var(--slider-bullets-height);
-        aspect-ratio: 1/1;
-        margin: 0;
-        appearance: none;
-        cursor: pointer;
-        background-color: #8d8d8d;
-        border-radius: 20px;
-        box-shadow: var(--slider-shadow);
-        opacity: 0.5;
-        transition: all 0.2s cubic-bezier(0.11, 1.03, 0.82, 1.33);
-        scale: 0.75;
-
-        &:hover {
-            scale: 1;
-        }
-
-        &:checked {
-            opacity: 1;
-            scale: 1;
-        }
-    }
-}
-
-.slider__item {
-
-    /* All slides except current */
-    &:not(:has(input:checked)) {
-        .slider__content>img {
-            translate: -100% 0;
-        }
-
-        .slider__control::after {
-            right: 100%;
-        }
-    }
-
-    /* Current slide */
-    &:has(input:checked) {
-        z-index: 1;
-
-        .slider__content > img {
-            translate: 0 0;
-        }
-
-        .slider__control::after {
-            display: none;
-        }
-    }
-
-    /* Slides after current slide */
-    &:has(input:checked)~& {
-        z-index: 5;
-
-        .slider__content>img {
-            translate: 100% 0;
-        }
-
-        & .slider__control::after {
-            right: auto;
-            left: 100%;
-            rotate: 180deg;
-        }
-    }
-
-    /* Direct next slide */
-    &:has(input:checked)+& {
-        z-index: 7;
-        display: block;
-    }
-}
 
 /* Welcome to AGL Design*/
 
@@ -442,7 +313,7 @@ section #welcome {
 
 #first-about {
     margin: 0 auto;
-    margin-top: 180px;
+    margin-top: 100px;
     margin-bottom: 180px;
     height: 350px;
     display: flex;
@@ -483,7 +354,7 @@ section #welcome {
 
 @keyframes reveal-opacity {
     from {
-        opacity: 0;
+        opacity: 1;
     }
 
     to {
@@ -494,13 +365,12 @@ section #welcome {
 @keyframes reveal-scale-opacity {
     0% {
         scale: 0.9;
-        opacity: 0;
     }
 
 
     100% {
         scale: 1;
-        opacity: 1;
+
     }
 }
 
@@ -682,12 +552,12 @@ section #welcome {
 
 @keyframes reveal {
     from {
-        opacity: 0;
+
         translate: 0 50px;
     }
 
     to {
-        opacity: 1;
+
         translate: 0 0;
     }
 }
@@ -737,6 +607,7 @@ section #welcome {
     padding: 15px;
     margin: 15px;
     color: #252525;
+    font-size: 1rem;
     font-weight: 500;
     border: 1px solid #003D72;
     border-right: none;
@@ -747,7 +618,6 @@ section #welcome {
 
 .motion-item:hover h3 {
     color: #ffffff;
-    font-size: 700;
     background-color: #42d3b1;
 }
 
@@ -911,6 +781,7 @@ section #welcome {
     text-align: center;
     padding: 15px;
     color: #252525;
+    font-size: 1rem;
     font-weight: 500;
     border: 1px solid #003D72;
     box-shadow: 5px 5px 0px #ffca56;
@@ -1373,7 +1244,6 @@ footer .personal-data a:hover{
         color: #fff;
     }
     
-
 }
 
 /*Boton back*/
