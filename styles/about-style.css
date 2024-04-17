@@ -1,22 +1,22 @@
-:root{
+:root {
     --base-background-color: #efefef;
-    --shadow-boxes:rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    --shadow-boxes: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     --white-boxes-gradient: linear-gradient(to bottom right, rgba(255, 255, 255, 1), rgb(239, 239, 239));
-    }
+}
 
 
-body{
+body {
     background-color: var(--base-background-color);
 }
 
-#about-me{
+#about-me {
     display: flex;
     justify-content: center;
     padding-top: 20px;
     background-image: linear-gradient(to bottom right, rgba(0, 220, 55, 0.5), rgba(73, 100, 255, 0.5));
 }
 
-.about-me-container-left{
+.about-me-container-left {
     margin-left: 5%;
     margin-top: -25px;
 }
@@ -28,15 +28,13 @@ body{
     background-image: url(/img/micara2023.png);
     background-size: cover;
     background-position: center;
-    mask-image: url(/img/micara2023.png), linear-gradient(
-        black 80%,
-        transparent
-    );
+    mask-image: url(/img/micara2023.png), linear-gradient(black 80%,
+            transparent);
     -webkit-animation: fromLeft 2s both;
     animation: fromLeft 2s both;
 }
 
-.about-me-name{
+.about-me-name {
     text-align: center;
     padding: 5px;
     background-image: var(--white-boxes-gradient);
@@ -47,17 +45,17 @@ body{
     animation: fromLeft 2s both;
 }
 
-.about-me-name h3{
+.about-me-name h3 {
     font-weight: 800;
     margin: 0;
     padding: 15px;
 }
 
-.fa-user{
+.fa-user {
     font-size: 1.4rem;
 }
 
-.about-me-contact{
+.about-me-contact {
     padding: 10px;
     font-size: 1.2rem;
     font-weight: 500;
@@ -68,26 +66,28 @@ body{
     animation: fromLeft 2s both;
 }
 
-.about-me-contact h3{
+.about-me-contact h3 {
     margin-bottom: 0px;
 }
 
-.fa-brands, .fa-envelope{
+.fa-brands,
+.fa-envelope {
     padding: 10px;
     color: #252525;
     transition: color 300ms;
 }
 
-.contact-links{
+.contact-links {
     padding-top: 1rem;
     font-size: 2rem;
 }
 
-.contact-links .fa-brands:hover, .fa-envelope:hover {
+.contact-links .fa-brands:hover,
+.fa-envelope:hover {
     color: tomato;
 }
 
-.about-me-skills{
+.about-me-skills {
     grid-template-columns: 50% 50%;
     margin-top: 40px;
     background-image: var(--white-boxes-gradient);
@@ -96,21 +96,21 @@ body{
     animation: fromLeft 2s both;
 }
 
-.about-me-skills h3{
+.about-me-skills h3 {
     text-align: center;
     margin-bottom: 30px;
 }
 
-.about-me-skills .logo-block img{
+.about-me-skills .logo-block img {
     width: 50px;
 }
 
-.logos{
+.logos {
     display: grid;
     grid-template-columns: 50% 50%;
 }
 
-.logo-block{
+.logo-block {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -118,16 +118,17 @@ body{
     margin-bottom: 20px;
 }
 
-.logo-block p{
+.logo-block p {
     margin-top: 5px;
     text-align: center;
 }
+
 /*                                     RIGHT COLUMN*/
-.relevant{
+.relevant {
     color: tomato;
 }
 
-.about-me-container-right{
+.about-me-container-right {
     width: 100%;
     margin-top: 15px;
     max-width: 700px;
@@ -135,12 +136,12 @@ body{
     margin-right: 5%;
 }
 
-.about-me-title{
+.about-me-title {
     padding: 20px;
     margin-bottom: 22px;
 }
 
-.about-me-title h2{
+.about-me-title h2 {
     font-size: 5rem;
     font-weight: 900;
     background-image: linear-gradient(to right, #000000, #535353);
@@ -152,7 +153,7 @@ body{
     animation: tracking-in-expand 1.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
 
-.about-me-phrase{
+.about-me-phrase {
     padding: 20px;
     margin-bottom: 40px;
     background-image: var(--white-boxes-gradient);
@@ -166,7 +167,7 @@ body{
     animation: fromRight 2s both;
 }
 
-.about-me-academics{
+.about-me-academics {
     padding: 20px;
     margin-bottom: 40px;
     background-image: var(--white-boxes-gradient);
@@ -175,17 +176,17 @@ body{
     animation: fromRight 2s both;
 }
 
-.about-me-academics h3{
+.about-me-academics h3 {
     text-align: left;
     margin-bottom: 20px;
 }
 
-.about-me-academics .paragraph{
+.about-me-academics .paragraph {
     margin-bottom: 20px;
     margin-left: 10px;
 }
 
-.about-me-academics .paragraph .academics-dates{
+.about-me-academics .paragraph .academics-dates {
     font-size: 0.8rem;
     color: #040404;
     background-color: #e4e4e4;
@@ -193,7 +194,7 @@ body{
     padding: 5px;
 }
 
-.about-me-experience{
+.about-me-experience {
     padding: 20px;
     margin-bottom: 40px;
     background-image: var(--white-boxes-gradient);
@@ -202,32 +203,39 @@ body{
     animation: fromRight 2s both;
 }
 
-.about-me-experience h3{
+.about-me-experience h3 {
     margin: 0 auto;
     text-align: left;
     margin-bottom: 20px;
 }
 
-.paragraph-intro-exp{
+.paragraph-intro-exp {
     margin-bottom: 20px;
 }
 
-.paragraph-exp{
+.paragraph-exp {
     font-size: 0.8rem;
     margin-left: 10px;
     margin-bottom: 10px;
 }
 
-@media (width <= 900px){
+@media (width <=900px) {
+
+    .about-me-container-left {
+        margin-left: 0;
+        margin-top: -25px;
+    }
 
     #about-me {
         display: flex;
-        flex-direction: column; /* Cambia la dirección del contenedor a columna */
-        align-items: center; /* Centra los elementos horizontalmente */
+        flex-direction: column;
+        /* Cambia la dirección del contenedor a columna */
+        align-items: center;
+        /* Centra los elementos horizontalmente */
     }
-    
+
     .about-me-title h2 {
-        font-size: 3rem; 
+        font-size: 3rem;
         text-align: center;
     }
 
@@ -236,27 +244,27 @@ body{
 /*Animations*/
 
 @keyframes fromLeft {
-    
-    0%{
+
+    0% {
         translate: 30px 0;
         opacity: 0;
     }
 
-    100%{
+    100% {
         opacity: 1;
         translate: 0 0;
     }
 
 }
 
-@keyframes fromRight{
-    
-    0%{
+@keyframes fromRight {
+
+    0% {
         translate: -30px 0;
         opacity: 0;
     }
 
-    100%{
+    100% {
         opacity: 1;
         translate: 0 0;
     }
@@ -265,26 +273,30 @@ body{
 
 @-webkit-keyframes tracking-in-expand {
     0% {
-      letter-spacing: -0.5em;
-      opacity: 0;
+        letter-spacing: -0.5em;
+        opacity: 0;
     }
+
     40% {
-      opacity: 0.6;
+        opacity: 0.6;
     }
+
     100% {
-      opacity: 1;
+        opacity: 1;
     }
-  }
-  @keyframes tracking-in-expand {
+}
+
+@keyframes tracking-in-expand {
     0% {
-      letter-spacing: -0.5em;
-      opacity: 0;
+        letter-spacing: -0.5em;
+        opacity: 0;
     }
+
     40% {
-      opacity: 0.6;
+        opacity: 0.6;
     }
+
     100% {
-      opacity: 1;
+        opacity: 1;
     }
-  }
-  
+}
