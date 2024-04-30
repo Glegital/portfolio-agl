@@ -274,6 +274,28 @@ header .fa-arrow-turn-up{
     }
 }
 
+@keyframes scrollAnimationMob {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    51% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
 
 .scroll-trigger {
     display: flex;
@@ -289,7 +311,6 @@ header .fa-arrow-turn-up{
     animation: bounce 1.5s infinite;
     margin-bottom: -30px;
     /* Espacio entre las flechas */
-
 }
 
 @keyframes bounce {
@@ -308,6 +329,23 @@ header .fa-arrow-turn-up{
 
     60% {
         transform: translateY(-5px);
+    }
+}
+
+@media(width< 756px){
+    .scroll-effect {
+        display: inline-block;
+        animation: scrollAnimationMob 2s linear infinite;
+    }
+
+    .scroll-trigger i {
+        color: tomato;
+        rotate: 180deg;
+        font-size: 3rem;
+        font-weight: 900;
+        animation: bounce 1.5s infinite;
+        margin-bottom: -30px;
+        /* Espacio entre las flechas */
     }
 }
 /* ANIMACIÓN FRASES ?? */

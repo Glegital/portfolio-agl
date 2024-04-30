@@ -46,7 +46,7 @@ body {
 }
 
 .about-me-name h3 {
-    font-weight: 800;
+    font-weight: 500;
     margin: 0;
     padding: 15px;
 }
@@ -128,6 +128,11 @@ body {
     color: tomato;
 }
 
+.andy{
+    font-size: 20px;
+    font-weight: 500;
+}
+
 .about-me-container-right {
     width: 100%;
     margin-top: 15px;
@@ -165,6 +170,11 @@ body {
     box-shadow: var(--shadow-boxes);
     -webkit-animation: fromRight 2s both;
     animation: fromRight 2s both;
+}
+
+.about-me-phrase{
+    font-size: 24px;
+    font-weight: 700;
 }
 
 .about-me-academics {
